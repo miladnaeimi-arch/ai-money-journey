@@ -12,6 +12,7 @@ client = genai.Client(api_key=api_key)
 
 results = []
 high_priority_leads = []
+follow_up_leads = []
 with open("leads.csv", "r") as file:
     reader = csv.DictReader(file)
 
@@ -63,6 +64,15 @@ Do not include markdown or any text outside the JSON.
 
         elif analysis["priority"] == "MEDIUM":
             print(f"📧 FOLLOW UP: Contact {lead['name']} this week.")
+            
+            follow_up_leads.append({
+                "name": lead["name"],
+                "budget": lead["budget"],
+                "company_size": lead["company_size"],
+                "urgent": lead["urgent"],
+                "reason": analysis["reason"],
+                "next_action": analysis["next_action"]
+            })
 
         else:
             print(f"📝 LOW PRIORITY: Add {lead['name']} to the nurture list.")
@@ -112,3 +122,18 @@ with open("high_priority_leads.csv", "w", newline="") as file:
     writer.writerows(high_priority_leads)
 
 print("High priority leads saved to high_priority_leads.csv")
+with open("follow_up_leads.csv", "w", newline="") as file:
+    fieldnames = [
+        "name",
+        "budget",
+        "company_size",
+        "urgent",
+        "reason",
+        "next_action"
+    ]
+
+    writer = csv.DictWriter(file, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(follow_up_leads)
+
+print("Follow-up leads saved to follow_up_leads.csv")
