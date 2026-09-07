@@ -1,16 +1,6 @@
-name,budget,company_size,urgent,ai_analysis
-Alex,12000,60,yes,"Priority: HIGH
-Reason: The lead has a solid budget, a mid-sized company, and immediate urgency.
-Next Action: Schedule a discovery call with Alex today to discuss their requirements."
-Sara,6000,20,no,"Priority: MEDIUM
-Reason: The budget is solid for a 20-person company, but the lack of urgency keeps it from being a top priority.
-Next Action: Send an introductory email highlighting scalable solutions and schedule a discovery call."
-John,2000,5,yes,"Priority: MEDIUM
-Reason: While the lead has high urgency, their budget and company size are relatively small.
-Next Action: Reach out immediately to qualify their exact needs and see if the $2000 budget is flexible."
-Mike,15000,100,yes,"Priority: HIGH
-Reason: The lead has a solid budget of $15,000, a mid-sized company of 100 employees, and indicated an urgent need.
-Next Action: Call Mike immediately to discuss his specific pain points and schedule a product demonstration."
-Emma,4500,15,no,"Priority: MEDIUM
-Reason: The budget is solid for a 15-person company, but the lack of urgency keeps it from being a top priority.
-Next Action: Send Emma an introductory email highlighting value and flexibility within her $4,500 budget."
+name,budget,company_size,urgent,priority,reason,next_action
+Alex,12000,60,yes,HIGH,The lead has a solid budget and urgent timeline with a mid-sized company.,Reach out immediately to schedule a discovery call.
+Sara,6000,20,no,MEDIUM,"The budget is solid for a 20-person company, but the lack of urgency suggests a longer sales cycle.",Send an introductory email with tailored pricing options to gauge her timeline.
+John,2000,5,yes,HIGH,The lead has an immediate need despite a smaller company size and budget.,Reach out immediately to discuss his urgent requirements.
+Mike,15000,100,yes,HIGH,The lead has a solid budget and high urgency with a mid-sized company.,Reach out to Mike immediately to schedule a discovery call.
+Emma,4500,15,no,MEDIUM,Moderate budget and mid-sized company offset by a lack of urgency.,Send an introductory email detailing how our solution fits teams of 15.

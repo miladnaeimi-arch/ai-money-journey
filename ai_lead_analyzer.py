@@ -1,5 +1,6 @@
 import csv
 import os
+import json
 from dotenv import load_dotenv
 from google import genai
 
@@ -23,35 +24,55 @@ Budget: ${lead['budget']}
 Company size: {lead['company_size']} employees
 Urgent: {lead['urgent']}
 
-Return your answer in exactly this format:
+Return ONLY valid JSON in exactly this format:
 
-Priority: HIGH, MEDIUM, or LOW
-Reason: one short sentence
-Next Action: one short sentence
+{{
+  "priority": "HIGH, MEDIUM, or LOW",
+  "reason": "one short sentence",
+  "next_action": "one short sentence"
+}}
+
+Do not include markdown or any text outside the JSON.
+
 """
 
         interaction = client.interactions.create(
             model="gemini-3.5-flash-lite",
             input=prompt
         )
+        analysis = json.loads(interaction.output_text)
 
         results.append({
             "name": lead["name"],
             "budget": lead["budget"],
             "company_size": lead["company_size"],
             "urgent": lead["urgent"],
-            "ai_analysis": interaction.output_text
+            "priority": analysis["priority"],
+            "reason": analysis["reason"],
+            "next_action": analysis["next_action"]
         })
 
         print(f"\nLead: {lead['name']}")
         print(interaction.output_text)
         print("-" * 50)
+        
 
 with open("ai_analyzed_leads.csv", "w", newline="") as file:
-    fieldnames = ["name", "budget", "company_size", "urgent", "ai_analysis"]
+    fieldnames = [
+    "name",
+    "budget",
+    "company_size",
+    "urgent",
+    "priority",
+    "reason",
+    "next_action"
+]
 
     writer = csv.DictWriter(file, fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(results)
 
 print("AI analysis saved to ai_analyzed_leads.csv")
+print(analysis["priority"])
+print(analysis["reason"])
+print(analysis["next_action"])

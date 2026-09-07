@@ -1,3 +1,4 @@
 .DS_Store
 .venu/
 .env
+__pycache__/
