@@ -1,0 +1,34 @@
+name,budget,company_size,urgent,ai_analysis
+Alex,12000,60,yes,"**Recommendation: Yes, pursue immediately.**
+
+**Reasoning:** 
+* **Budget ($12k):** This is a solid mid-tier amount for many standard B2B products or services.
+* **Company Size (60 employees):** Indicates an established mid-market business with likely decision-making authority and a real need for scalable solutions.
+* **Urgency (Yes):** High intent means shorter sales cycles and a higher probability of closing quickly if you act fast. 
+
+**Next step:** Assign to an account executive for immediate outreach today."
+Sara,6000,20,no,"**Recommendation: Worth pursuing, but prioritize lower time-investment.**
+
+**Analysis:** 
+* **Budget ($6,000):** Decent for a small business, likely suitable for standard packages or self-serve products, but may not justify heavy custom work.
+* **Company Size (20 employees):** A true small-to-medium business (SMB); decision-making should be fast since Sara is likely the owner or a senior leader.
+* **Urgency (No):** Indicates this isn't an immediate fire to put out, meaning you shouldn't drop everything, but it is a steady prospect.
+
+**Next Step:** Send an automated or templated email offering a quick, low-friction consultation or product demo to gauge her actual timeline without expending excessive sales resources."
+John,2000,5,yes,"**Recommendation:** **Pursue with caution (Low Priority).** 
+
+**Analysis:** 
+* **Pros:** The lead is urgent and ready to buy (""Yes""), which shortens the sales cycle. 
+* **Cons:** The $2,000 budget is quite low for B2B solutions, and with only 5 employees, the lifetime value (LTV) and upsell potential are minimal. 
+
+**Next Step:** Only pursue if your product/service has a low-touch, automated onboarding process that requires minimal time investment. Otherwise, the low budget and small company size do not justify heavy manual sales effort."
+Mike,15000,100,yes,"**Recommendation: Yes, pursue immediately.**
+
+**Reasoning:** 
+* **High Intent:** The urgency (""yes"") means Mike has an active, pressing problem and is likely ready to buy now rather than months down the road.
+* **Good Fit:** A 100-employee company typically has stable cash flow and decision-making structures that can handle a $15,000 price point without excessive bureaucracy. 
+* **Solid Value:** $15K is a healthy mid-market deal size that justifies immediate sales outreach."
+Emma,4500,15,no,"**Recommendation:** **Pursue, but with a low-touch approach.**
+
+* **Why:** The budget ($4,500) is reasonable for a 15-person company (suggesting a $300/user value, assuming software/services), and small teams often have shorter sales cycles. 
+* **The Catch:** Because it’s not urgent, don't allocate heavy sales resources. Send an automated or templated nurture sequence highlighting ROI and ease of implementation, and let Emma come to you when her timeline accelerates."
