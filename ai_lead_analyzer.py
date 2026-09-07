@@ -41,7 +41,15 @@ Do not include markdown or any text outside the JSON.
             input=prompt
         )
         analysis = json.loads(interaction.output_text)
+        
+        if analysis["priority"] == "HIGH":
+            print(f"🔥 SALES ALERT: Contact {lead['name']} immediately!")
 
+        elif analysis["priority"] == "MEDIUM":
+            print(f"📧 FOLLOW UP: Contact {lead['name']} this week.")
+
+        else:
+            print(f"📝 LOW PRIORITY: Add {lead['name']} to the nurture list.")
         results.append({
             "name": lead["name"],
             "budget": lead["budget"],
