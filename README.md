@@ -4,28 +4,40 @@ This repository documents my journey learning Python, AI, and automation by buil
 
 ## Projects
 
+
+
 ### 1. Hello Python
 
 A simple Python program that works with:
 
 - user input
-
 - variables
-
 - integers
-
 - calculations
-
 - conditional logic
+
+
 
 ### 2. Lead Scoring System
 
 A rule-based lead qualification system that scores leads based on:
 
 - budget
-
 - company size
-
 - urgency
 
-The system classifies leads based on their total score.
+
+
+### 3. AI Lead Routing System
+
+An AI-powered lead qualification and routing workflow built with Python and the Gemini API.
+
+The system:
+
+- reads lead data from CSV
+- sends each lead to Gemini for analysis
+- returns structured JSON with priority, reason, and next action
+- routes leads into HIGH, MEDIUM, or LOW priority workflows
+- saves results into separate CSV files
+- includes error handling for API and JSON failures
+
