@@ -1,6 +1,2 @@
 name,budget,company_size,urgent,priority,reason,next_action
-Alex,12000,60,yes,HIGH,The lead has a solid budget and urgent timeline with a mid-sized company.,Reach out immediately to schedule a discovery call.
-Sara,6000,20,no,MEDIUM,"The budget is solid for a 20-person company, but the lack of urgency suggests a longer sales cycle.",Send an introductory email with tailored pricing options to gauge her timeline.
-John,2000,5,yes,HIGH,The lead has an immediate need despite a smaller company size and budget.,Reach out immediately to discuss his urgent requirements.
-Mike,15000,100,yes,HIGH,The lead has a solid budget and high urgency with a mid-sized company.,Reach out to Mike immediately to schedule a discovery call.
-Emma,4500,15,no,MEDIUM,Moderate budget and mid-sized company offset by a lack of urgency.,Send an introductory email detailing how our solution fits teams of 15.
+Alex,12000,60,yes,HIGH,"The lead has a solid budget of $12,000, a mid-sized company of 60 employees, and an urgent timeline.",Reach out to Alex immediately to schedule a discovery call and present a tailored proposal.

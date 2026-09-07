@@ -35,10 +35,17 @@ Return ONLY valid JSON in exactly this format:
 }}
 
 Do not include markdown or any text outside the JSON.
-
 """
 
-    
+        try:
+            interaction = client.interactions.create(
+                model="gemini-3.5-flash-lite",
+                input=prompt
+            )
+        except Exception as e:
+            print(f"⚠️ AI request failed for {lead['name']}: {e}")
+            continue
+
         try:
             analysis = json.loads(interaction.output_text)
         except json.JSONDecodeError:
@@ -98,6 +105,7 @@ Do not include markdown or any text outside the JSON.
         print(f"\nLead: {lead['name']}")
         print(interaction.output_text)
         print("-" * 50)
+
         
 
 with open("ai_analyzed_leads.csv", "w", newline="") as file:
