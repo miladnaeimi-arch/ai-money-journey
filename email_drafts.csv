@@ -1,5 +1,5 @@
-name,email,budget,company_size,subject,body
-Sara,sara@example.com,6000,20,Product demonstration for your team at [Company Name],"Hi Sara,
+to,subject,body
+sara@example.com,Product demonstration for your team at [Company Name],"Hi Sara,
 
 I hope you're having a great week. With a team of 20, I imagine streamlining your workflow is a top priority for you right now.
 
@@ -8,7 +8,7 @@ I'd love to show you how our solution can fit comfortably within your $6,000 bud
 Best regards,
 
 [Your Name]"
-Emma,emma@example.com,4500,15,Tailored solution for Emma's team at [Company Name],"Hi Emma,
+emma@example.com,Tailored solution for Emma's team at [Company Name],"Hi Emma,
 
 I hope you're having a great week. Given your team size of 15 and budget around $4,500, I wanted to share a tailored overview of how our platform can drive efficiency for your specific needs.
 

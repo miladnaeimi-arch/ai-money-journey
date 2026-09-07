@@ -1,3 +1,3 @@
-name,budget,company_size,urgent,reason,next_action
-Alex,12000,60,yes,"The lead has a solid budget of $12,000, a mid-sized company of 60 employees, and an urgent timeline.",Reach out immediately to schedule a discovery call and present a tailored proposal.
-Mike,15000,100,yes,The lead has a strong budget and urgent timeline with a mid-sized company.,Reach out immediately to schedule a discovery call.
+name,budget,company_size,urgent,email,reason,next_action
+Alex,12000,60,yes,alex@example.com,"The lead has a solid budget of $12,000, a mid-sized company of 60 employees, and an urgent timeline.",Reach out to Alex immediately to schedule a discovery call and present a tailored proposal.
+Mike,15000,100,yes,mike@example.com,"The lead has a solid budget, a mid-sized company, and immediate urgency.",Reach out to Mike today to schedule a discovery call.

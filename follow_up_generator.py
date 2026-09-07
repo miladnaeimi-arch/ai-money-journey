@@ -48,6 +48,7 @@ Do not include markdown or any text outside the JSON.
 
         results.append({
             "name": lead["name"],
+            "email": lead["email"],
             "budget": lead["budget"],
             "company_size": lead["company_size"],
             "subject": email_data["subject"],
@@ -55,7 +56,14 @@ Do not include markdown or any text outside the JSON.
         })
 
 with open("generated_follow_up_emails.csv", "w", newline="") as file:
-    fieldnames = ["name", "budget", "company_size", "subject", "body"]
+    fieldnames = [
+        "name",
+        "email",
+        "budget",
+        "company_size",
+        "subject",
+        "body"
+    ]
 
     writer = csv.DictWriter(file, fieldnames=fieldnames)
     writer.writeheader()
