@@ -36,11 +36,18 @@ Do not include markdown or any text outside the JSON.
 
 """
 
-        interaction = client.interactions.create(
-            model="gemini-3.5-flash-lite",
-            input=prompt
-        )
-        analysis = json.loads(interaction.output_text)
+    
+        try:
+            analysis = json.loads(interaction.output_text)
+        except json.JSONDecodeError:
+            rint(f"⚠️ Could not parse AI response for {lead['name']}")
+            analysis = {
+                "priority": "UNKNOWN",
+                "reason": "AI response could not be parsed.",
+                "next_action": "Review this lead manually."
+            }
+            
+
         
         if analysis["priority"] == "HIGH":
             print(f"🔥 SALES ALERT: Contact {lead['name']} immediately!")
