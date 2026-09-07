@@ -1,36 +1,23 @@
-name,budget,company_size,email
-Sara,6000,20,"Subject: Quick intro / Product demo for [Company Name]?
+name,budget,company_size,subject,body
+Sara,6000,20,Product Demo for Your Team,"Hi Sara,
 
-Hi Sara,
+I hope you're having a great week. I wanted to follow up and see if you'd be open to a brief, no-pressure product demo tailored for your team of 20.
 
-I hope you’re having a great week. 
+We frequently work with companies of your size to help streamline operations within a flexible budget. Even if there is no immediate rush, a quick walkthrough can give you a clear idea of what's possible when the time is right.
 
-I’m reaching out from [Your Company] because I noticed your team of 20 at [Sara's Company] is growing. We often help companies of your size streamline their operations and maximize their tech investments efficiently. 
+Do you have 15 minutes next week for a quick chat?
 
-Since you might be evaluating tools right now, I’d love to show you a quick, no-pressure product demo so you can see firsthand how we could fit into your plans down the road. 
+Best regards,
+[Your Name]"
+Emma,4500,15,Boosting efficiency for your team at [Company Name],"Hi Emma,
 
-Do you have 10 minutes next Tuesday or Thursday for a brief chat? 
+I hope you're having a great week. I wanted to follow up and share how we've helped companies around the 15-employee mark streamline their workflows and maximize their return on investment.
+
+Given your goals, I’d love to show you a quick, tailored walkthrough of how our platform can support your team.
+
+Do you have 10 minutes next Tuesday or Wednesday for a brief call?
 
 Best regards,
 
-[Your Name]  
-[Your Title]  
-[Your Company]"
-Emma,4500,15,"Subject: Quick question regarding [Product/Company Name], Emma
-
-Hi Emma,
-
-I hope you’re having a great week. 
-
-Given your team size of 15, I wanted to share how companies like yours typically use [Product/Service] to streamline their workflow and maximize a $4,500 investment—often saving several hours a week right out of the gate. 
-
-I know you might still be exploring your options, but I'd love to show you a quick, 10-minute walkthrough so you have all the details when the time is right. 
-
-Do you have 10 minutes open next Tuesday or Wednesday for a brief chat? 
-
-Best regards,
-
-[Your Name]  
-[Your Title]  
-[Your Company]  
-[Link to calendar/Booking page]"
+[Your Name]
+[Your Title]"
