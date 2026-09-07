@@ -11,7 +11,7 @@ api_key = os.getenv("GEMINI_API_KEY")
 client = genai.Client(api_key=api_key)
 
 results = []
-
+high_priority_leads = []
 with open("leads.csv", "r") as file:
     reader = csv.DictReader(file)
 
@@ -40,7 +40,7 @@ Do not include markdown or any text outside the JSON.
         try:
             analysis = json.loads(interaction.output_text)
         except json.JSONDecodeError:
-            rint(f"⚠️ Could not parse AI response for {lead['name']}")
+            print(f"⚠️ Could not parse AI response for {lead['name']}")
             analysis = {
                 "priority": "UNKNOWN",
                 "reason": "AI response could not be parsed.",
@@ -51,6 +51,15 @@ Do not include markdown or any text outside the JSON.
         
         if analysis["priority"] == "HIGH":
             print(f"🔥 SALES ALERT: Contact {lead['name']} immediately!")
+            
+            high_priority_leads.append({
+                "name": lead["name"],
+                "budget": lead["budget"],
+                "company_size": lead["company_size"],
+                "urgent": lead["urgent"],
+                "reason": analysis["reason"],
+                "next_action": analysis["next_action"]
+            })
 
         elif analysis["priority"] == "MEDIUM":
             print(f"📧 FOLLOW UP: Contact {lead['name']} this week.")
@@ -88,6 +97,18 @@ with open("ai_analyzed_leads.csv", "w", newline="") as file:
     writer.writerows(results)
 
 print("AI analysis saved to ai_analyzed_leads.csv")
-print(analysis["priority"])
-print(analysis["reason"])
-print(analysis["next_action"])
+with open("high_priority_leads.csv", "w", newline="") as file:
+    fieldnames = [
+        "name",
+        "budget",
+        "company_size",
+        "urgent",
+        "reason",
+        "next_action"
+    ]
+
+    writer = csv.DictWriter(file, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(high_priority_leads)
+
+print("High priority leads saved to high_priority_leads.csv")
