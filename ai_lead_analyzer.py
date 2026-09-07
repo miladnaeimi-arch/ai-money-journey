@@ -8,6 +8,7 @@ load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
 
 client = genai.Client(api_key=api_key)
+
 results = []
 
 with open("leads.csv", "r") as file:
@@ -22,7 +23,11 @@ Budget: ${lead['budget']}
 Company size: {lead['company_size']} employees
 Urgent: {lead['urgent']}
 
-Give a short recommendation about whether this lead is worth pursuing.
+Return your answer in exactly this format:
+
+Priority: HIGH, MEDIUM, or LOW
+Reason: one short sentence
+Next Action: one short sentence
 """
 
         interaction = client.interactions.create(
