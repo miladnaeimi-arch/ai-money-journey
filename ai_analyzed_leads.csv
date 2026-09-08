@@ -1,6 +1,6 @@
 name,budget,company_size,urgent,email,priority,reason,next_action
 Alex,12000,60,yes,alex@example.com,HIGH,"The lead has a solid budget of $12,000, a mid-sized company of 60 employees, and an urgent timeline.",Reach out to Alex immediately to schedule a discovery call and present a tailored proposal.
-Sara,6000,20,no,sara@example.com,MEDIUM,Moderate budget and mid-sized company offset the lack of urgency.,Send an introductory email offering a product demonstration.
-John,2000,5,yes,john@example.com,LOW,The budget of $2000 is too small for our typical enterprise offerings.,Send an automated email with self-service pricing and resources.
+Sara,6000,20,no,sara@example.com,MEDIUM,Moderate budget and mid-sized company offer a solid opportunity without immediate pressure.,Send an introductory email detailing product offerings and schedule a follow-up call.
+John,2000,5,yes,john@example.com,LOW,The budget of $2000 is too low to be qualified for our services despite the urgency.,Send an automated email with self-service pricing and resources.
 Mike,15000,100,yes,mike@example.com,HIGH,"The lead has a solid budget, a mid-sized company, and immediate urgency.",Reach out to Mike today to schedule a discovery call.
-Emma,4500,15,no,emma@example.com,MEDIUM,Moderate budget and mid-sized company offset the lack of urgency.,Send a tailored product overview and schedule a discovery call.
+Emma,4500,15,no,emma@example.com,MEDIUM,Moderate budget and mid-sized company offset the lack of urgency.,Send an introductory email to gauge interest and timeline.

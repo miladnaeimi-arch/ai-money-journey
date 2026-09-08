@@ -1,2 +1,2 @@
 name,budget,company_size,urgent,email,reason,next_action
-John,2000,5,yes,john@example.com,The budget of $2000 is too small for our typical enterprise offerings.,Send an automated email with self-service pricing and resources.
+John,2000,5,yes,john@example.com,The budget of $2000 is too low to be qualified for our services despite the urgency.,Send an automated email with self-service pricing and resources.
