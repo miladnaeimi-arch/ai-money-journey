@@ -11,6 +11,7 @@ from googleapiclient.discovery import build
 
 
 SCOPES = ["https://www.googleapis.com/auth/gmail.compose"]
+PROCESSED_FILE = "processed_drafts.csv"
 
 creds = None
 
@@ -36,15 +37,38 @@ if not creds or not creds.valid:
 
 service = build("gmail", "v1", credentials=creds)
 
+processed_emails = set()
+
+if os.path.exists(PROCESSED_FILE):
+    with open(PROCESSED_FILE, "r") as file:
+        reader = csv.DictReader(file)
+
+        for row in reader:
+            if row.get("email"):
+                processed_emails.add(row["email"])
+
+
 created_count = 0
+skipped_count = 0
 
 with open("email_drafts.csv", "r") as file:
     reader = csv.DictReader(file)
 
     for draft_data in reader:
+        email = draft_data["to"]
+
+        if email in processed_emails:
+            print("Skipping duplicate draft:")
+            print("Recipient:", email)
+            print("Subject:", draft_data["subject"])
+            print("-" * 50)
+
+            skipped_count += 1
+            continue
+
         message = EmailMessage()
 
-        message["To"] = draft_data["to"]
+        message["To"] = email
         message["Subject"] = draft_data["subject"]
         message.set_content(draft_data["body"])
 
@@ -64,10 +88,16 @@ with open("email_drafts.csv", "r") as file:
         ).execute()
 
         created_count += 1
+        processed_emails.add(email)
+
+        with open(PROCESSED_FILE, "a", newline="") as file:
+            writer = csv.writer(file)
+            writer.writerow([email])
 
         print("Gmail draft created successfully!")
         print("Draft ID:", draft["id"])
-        print("Recipient:", draft_data["to"])
+        print("Recipient:", email)
         print("-" * 50)
 
 print(f"Total drafts created: {created_count}")
+print(f"Total duplicates skipped: {skipped_count}")
