@@ -39,8 +39,9 @@ Return ONLY valid JSON in exactly this format:
 }}
 
 Do not include markdown or any text outside the JSON.
+Do not use placeholders such as [Your Name], [Your Company], or [Company Name].
+End the email with "Best regards," only, without adding a sender name or title.
 """
-
         try:
             interaction = client.interactions.create(
                 model="gemini-3.5-flash-lite",
