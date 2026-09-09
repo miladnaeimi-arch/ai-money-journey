@@ -1,15 +1,20 @@
 import os
 import csv
 import json
+import sys
+
 from dotenv import load_dotenv
 from google import genai
+
 
 load_dotenv()
 
 api_key = os.getenv("GEMINI_API_KEY")
+
 client = genai.Client(api_key=api_key)
 
 results = []
+failed_count = 0
 
 with open("follow_up_leads.csv", "r") as file:
     reader = csv.DictReader(file)
@@ -36,24 +41,41 @@ Return ONLY valid JSON in exactly this format:
 Do not include markdown or any text outside the JSON.
 """
 
-        interaction = client.interactions.create(
-            model="gemini-3.5-flash-lite",
-            input=prompt
-        )
+        try:
+            interaction = client.interactions.create(
+                model="gemini-3.5-flash-lite",
+                input=prompt
+            )
 
-        email_data = json.loads(interaction.output_text)
+            email_data = json.loads(interaction.output_text)
 
-        print(interaction.output_text)
-        print("-" * 50)
+            print(interaction.output_text)
+            print("-" * 50)
 
-        results.append({
-            "name": lead["name"],
-            "email": lead["email"],
-            "budget": lead["budget"],
-            "company_size": lead["company_size"],
-            "subject": email_data["subject"],
-            "body": email_data["body"]
-        })
+            results.append({
+                "name": lead["name"],
+                "email": lead["email"],
+                "budget": lead["budget"],
+                "company_size": lead["company_size"],
+                "subject": email_data["subject"],
+                "body": email_data["body"]
+            })
+
+        except json.JSONDecodeError:
+            print("Invalid JSON from Gemini.")
+            print("Skipping lead:", lead["name"])
+            print("-" * 50)
+
+            failed_count += 1
+
+        except Exception as error:
+            print("Gemini API error:")
+            print(error)
+            print("Skipping lead:", lead["name"])
+            print("-" * 50)
+
+            failed_count += 1
+
 
 with open("generated_follow_up_emails.csv", "w", newline="") as file:
     fieldnames = [
@@ -66,7 +88,16 @@ with open("generated_follow_up_emails.csv", "w", newline="") as file:
     ]
 
     writer = csv.DictWriter(file, fieldnames=fieldnames)
+
     writer.writeheader()
     writer.writerows(results)
 
+
 print("Follow-up emails saved to generated_follow_up_emails.csv")
+print("Successful leads:", len(results))
+print("Failed leads:", failed_count)
+
+
+if failed_count > 0 and len(results) == 0:
+    print("ERROR: All follow-up email generations failed.")
+    sys.exit(1)
