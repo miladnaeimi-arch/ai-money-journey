@@ -41,6 +41,9 @@ Return ONLY valid JSON in exactly this format:
 Do not include markdown or any text outside the JSON.
 Do not use placeholders such as [Your Name], [Your Company], or [Company Name].
 End the email with "Best regards," only, without adding a sender name or title.
+Do not invent previous conversations, meetings, attachments, case studies, customer results, or company details that were not provided in the lead data.
+Only use facts provided in the lead data.
+If information is unknown, keep the email general instead of making assumptions.
 """
         try:
             interaction = client.interactions.create(
