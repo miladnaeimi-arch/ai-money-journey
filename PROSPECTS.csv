@@ -1,6 +1,6 @@
-company,contact_name,website,reason,status
-"Hometown Marketing Agency","Kyle Coffelt","","Small-business agency focused on qualified leads and conversion tracking","contacted"
-"Straight Line Web Solutions","","","Small boutique agency focused on lead-generating websites, HubSpot, and revenue operations","contacted"
-"SMB Digital","","","Kansas City agency focused on lead generation and revenue growth for small and medium businesses","contacted"
-"WiseGuys Digital Marketing","","","Kansas City agency focused on lead generation and measurable growth for service businesses","contacted"
-"Rank Fuse Digital Marketing","","","Boutique KC-area agency focused on lead generation, marketing automation, and conversion optimization","contacted"
+company,contact_name,website,reason,status,contacted_date,follow_up_date
+Hometown Marketing Agency,Kyle Coffelt,,Small-business agency focused on qualified leads and conversion tracking,contacted,2026-09-11,2026-09-16
+Straight Line Web Solutions,,,"Small boutique agency focused on lead-generating websites, HubSpot, and revenue operations",contacted,2026-09-11,2026-09-16
+SMB Digital,,,Kansas City agency focused on lead generation and revenue growth for small and medium businesses,contacted,2026-09-11,2026-09-16
+WiseGuys Digital Marketing,,,Kansas City agency focused on lead generation and measurable growth for service businesses,contacted,2026-09-11,2026-09-16
+Rank Fuse Digital Marketing,,,"Boutique KC-area agency focused on lead generation, marketing automation, and conversion optimization",contacted,2026-09-11,2026-09-16
